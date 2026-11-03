@@ -1,0 +1,334 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:250px;
+height:100vh;
+background:#111;
+padding:20px;
+border-right:1px solid rgba(214,194,156,.15);
+display:flex;
+flex-direction:column;
+gap:10px;
+overflow-y:auto;
+z-index:9999; /* 🔥 ALWAYS ON TOP */
+}
+
+/* BRAND */
+.brand{
+text-align:center;
+padding-bottom:20px;
+margin-bottom:10px;
+border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.brand img{
+width:80px;
+height:80px;
+object-fit:cover;
+border-radius:50%;
+padding:6px;
+background:#1a1a1a;
+border:1px solid rgba(214,194,156,.2);
+box-shadow:0 0 18px rgba(214,194,156,.12);
+margin-bottom:12px;
+}
+
+.brand h2{
+font-size:16px;
+color:#D6C29C;
+}
+
+.brand span{
+font-size:12px;
+color:#999;
+}
+
+/* LINKS */
+.sidebar a{
+color:#ddd;
+text-decoration:none;
+padding:12px 15px;
+border-radius:10px;
+font-size:14px;
+transition:.25s;
+display:block;
+}
+
+.sidebar a:hover{
+background:#1b1b1b;
+color:#D6C29C;
+transform:translateX(4px);
+}
+
+.sidebar a.active{
+background:#D6C29C;
+color:#111;
+font-weight:700;
+}
+
+.sidebar a.logout{
+margin-top:auto;
+background:#1a1a1a;
+color:#ffb3b3;
+}
+
+.sidebar a.logout:hover{
+background:#2a1212;
+color:#ff6b6b;
+}
+
+/* ================= MAIN ================= */
+.main{
+margin-left:250px;
+padding:30px;
+min-height:100vh;
+position:relative;
+z-index:1;
+}
+
+/* ================= CARDS ================= */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:16px;
+margin-top:20px;
+}
+
+.card{
+background:#161616;
+padding:22px;
+border-radius:14px;
+border:1px solid rgba(214,194,156,.12);
+}
+
+.card h3{
+color:#D6C29C;
+font-size:15px;
+margin-bottom:8px;
+}
+
+.card p{
+font-size:28px;
+font-weight:700;
+}
+
+/* ================= TABLE ================= */
+/* ================= TABLE WRAPPER ================= */
+.table-wrap{
+    width:100%;
+    overflow:hidden;
+}
+
+/* ================= TABLE BASE ================= */
+table{
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;
+    font-size:14px;
+}
+
+/* ================= HEADER ================= */
+th{
+    background:#1d1d1d;
+    color:#D6C29C;
+    padding:14px 10px;
+    text-align:left;
+    font-size:14px;
+    font-weight:700;
+    border-bottom:1px solid #333;
+}
+
+/* ================= CELLS ================= */
+td{
+    background:#161616;
+    padding:14px 10px;
+    font-size:14px;
+    vertical-align:top;
+    border-bottom:1px solid #222;
+    word-break:break-word;
+    line-height:1.4;
+}
+
+/* ================= ROW HOVER ================= */
+tr:hover td{
+    background:#1b1b1b;
+    transition:.2s;
+}
+
+/* ================= TEXT STYLES ================= */
+.small{
+    font-size:12px;
+    color:#aaa;
+}
+
+.service{
+    color:#D6C29C;
+    font-weight:700;
+    font-size:14px;
+}
+
+.note{
+    font-size:13px;
+    color:#ccc;
+}
+
+/* ================= SELECT ================= */
+select{
+    width:100%;
+    background:#0f0f0f;
+    color:#fff;
+    border:1px solid #333;
+    padding:8px;
+    border-radius:6px;
+    font-size:13px;
+}
+
+/* ================= BADGES ================= */
+.badge{
+    display:inline-block;
+    padding:6px 10px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.pending{background:#3a2f12;color:#ffd86b;}
+.confirmed{background:#173527;color:#7dffaf;}
+.completed{background:#1a2c4b;color:#8fc5ff;}
+.cancelled{background:#3b1717;color:#ff9e9e;}
+
+.cash{background:#2d3b2f;color:#7dffaf;}
+.gcash{background:#1e2a3b;color:#8fc5ff;}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+    table{
+        font-size:13px;
+    }
+
+    th,td{
+        padding:10px 8px;
+    }
+}
+
+
+/* ================= CALENDAR SAFE FIX ================= */
+.calendar-box{
+background:#161616;
+padding:20px;
+border-radius:12px;
+}
+
+td{
+    position:relative;
+}
+
+td a{
+    position:relative;
+    z-index:99999;
+    display:inline-block;
+    cursor:pointer;
+}
+
+td:hover{
+outline:1px solid #D6C29C;
+transform:none; /* 🔥 FIX OVERLAP BUG */
+}
+
+td:last-child{
+text-align:center;
+}
+
+.num{
+font-size:13px;
+opacity:0.8;
+}
+
+/* BOOKING DOT */
+.dot{
+width:8px;
+height:8px;
+background:#D6C29C;
+border-radius:50%;
+margin-top:6px;
+box-shadow:0 0 8px #D6C29C;
+}
+
+.count{
+font-size:11px;
+color:#D6C29C;
+}
+
+/* ================= MODAL ================= */
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.7);
+z-index:10000; /* 🔥 ABOVE EVERYTHING */
+}
+
+.modal-content{
+background:#161616;
+width:420px;
+margin:10% auto;
+padding:20px;
+border-radius:12px;
+border:1px solid #D6C29C;
+max-height:70vh;
+overflow:auto;
+}
+
+.close{
+float:right;
+cursor:pointer;
+font-size:22px;
+color:#fff;
+}
+
+.slot{
+padding:10px;
+border-bottom:1px solid #333;
+font-size:13px;
+}
+
+.slot strong{
+color:#D6C29C;
+display:block;
+}
+
+.no{
+color:#aaa;
+font-size:13px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:900px){
+
+.sidebar{
+width:100%;
+height:auto;
+position:relative;
+}
+
+.main{
+margin-left:0;
+padding:20px;
+}
+
+}

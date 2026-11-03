@@ -1,0 +1,15 @@
+<?php
+include '../includes/db.php';
+
+$id = $_GET['id'];
+$status = $_GET['status'];
+
+mysqli_query($conn,"
+UPDATE bookings 
+SET payment_status='$status'
+WHERE id='$id'
+");
+
+header("Location: bookings.php");
+exit;
+?>
